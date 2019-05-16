@@ -21,6 +21,16 @@ The following configurations are recommended for Jest:
 ``` js
 {
   "jest": {
+    "globals": {
+      "vue-jest": {
+        "babelConfig": {
+          "presets": [
+            ["@babel/preset-env", { "useBuiltIns": "entry" }],
+            "@vue/babel-preset-jsx"
+          ]
+        }
+      }
+    },
     "moduleFileExtensions": [
       "js",
       "json",
@@ -53,11 +63,14 @@ The following configurations are recommended for Jest:
 npm install
 
 # serve with hot reload at localhost:8080
-npm run dev
+npm run serve
 
 # build for production with minification
 npm run build
 
 # run tests
 npm test
+
+# see coverage
+open coverage/lcov-report/index.html
 ```
